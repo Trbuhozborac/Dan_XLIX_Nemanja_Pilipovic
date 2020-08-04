@@ -65,32 +65,39 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="Models\HotelModel.Context.cs">
+    <Compile Include="Models\HotelDbModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HotelModel.Context.tt</DependentUpon>
+      <DependentUpon>HotelDbModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HotelModel.cs">
+    <Compile Include="Models\HotelDbModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HotelModel.tt</DependentUpon>
+      <DependentUpon>HotelDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HotelModel.Designer.cs">
+    <Compile Include="Models\HotelDbModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HotelModel.edmx</DependentUpon>
+      <DependentUpon>HotelDbModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\tblAbsence.cs">
-      <DependentUpon>HotelModel.tt</DependentUpon>
+      <DependentUpon>HotelDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblManager.cs">
-      <DependentUpon>HotelModel.tt</DependentUpon>
+      <DependentUpon>HotelDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblStaff.cs">
-      <DependentUpon>HotelModel.tt</DependentUpon>
+      <DependentUpon>HotelDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CreateManagerViewModel.cs" />
     <Compile Include="ViewModels\OwnerViewModel.cs" />
+    <Compile Include="Views\CreateManagerView.xaml.cs">
+      <DependentUpon>CreateManagerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateStaffView.xaml.cs">
+      <DependentUpon>CreateStaffView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\OwnerView.xaml.cs">
       <DependentUpon>OwnerView.xaml</DependentUpon>
     </Compile>
@@ -106,6 +113,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\CreateManagerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateStaffView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\OwnerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,12 +144,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Models\HotelModel.edmx">
+    <EntityDeploy Include="Models\HotelDbModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HotelModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>HotelDbModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\HotelModel.edmx.diagram">
-      <DependentUpon>HotelModel.edmx</DependentUpon>
+    <None Include="Models\HotelDbModel.edmx.diagram">
+      <DependentUpon>HotelDbModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -149,19 +164,19 @@
     <Resource Include="OwnerAccess.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\HotelModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>HotelModel.Context.cs</LastGenOutput>
-      <DependentUpon>HotelModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\HotelModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HotelModel.edmx</DependentUpon>
-      <LastGenOutput>HotelModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Models\HotelDbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HotelDbModel.edmx</DependentUpon>
+      <LastGenOutput>HotelDbModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\HotelDbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HotelDbModel.edmx</DependentUpon>
+      <LastGenOutput>HotelDbModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

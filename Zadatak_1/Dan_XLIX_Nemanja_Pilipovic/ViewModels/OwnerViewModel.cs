@@ -1,4 +1,5 @@
 ﻿using Dan_XLIX_Nemanja_Pilipovic.Commands;
+using Dan_XLIX_Nemanja_Pilipovic.Models;
 using Dan_XLIX_Nemanja_Pilipovic.Views;
 using System.Windows.Input;
 
@@ -23,6 +24,17 @@ namespace Dan_XLIX_Nemanja_Pilipovic.ViewModels
 
         #region Properties
 
+        private tblManager manager;
+
+        public tblManager Manager
+        {
+            get { return manager; }
+            set 
+            {
+                manager = value;
+                OnPropertyChanged("Manager");
+            }
+        }
 
 
         #endregion
@@ -61,7 +73,8 @@ namespace Dan_XLIX_Nemanja_Pilipovic.ViewModels
 
         private void CreateStaffExecute()
         {
-
+            CreateStaffView view = new CreateStaffView();
+            view.ShowDialog();
         }
 
         private bool CanCreateStaff()
@@ -71,7 +84,8 @@ namespace Dan_XLIX_Nemanja_Pilipovic.ViewModels
 
         private void CreateManagerExecute()
         {
-
+            CreateManagerView view = new CreateManagerView();
+            view.ShowDialog();
         }
 
         private bool CanCreateManager()

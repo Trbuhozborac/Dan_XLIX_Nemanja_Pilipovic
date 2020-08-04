@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/hotelmodel.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/hotelmodel.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/hoteldbmodel.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/hoteldbmodel.tt")]
 
 

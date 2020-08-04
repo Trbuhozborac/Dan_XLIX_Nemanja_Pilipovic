@@ -22,6 +22,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="20" />
           <Property Name="Surname" Type="varchar" MaxLength="50" />
+          <Property Name="DateOfBirth" Type="date" />
           <Property Name="Mail" Type="varchar" MaxLength="30" />
           <Property Name="Username" Type="varchar" MaxLength="20" />
           <Property Name="HashedPassword" Type="varchar" MaxLength="100" />
@@ -36,6 +37,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="20" />
           <Property Name="Surname" Type="varchar" MaxLength="50" />
+          <Property Name="DateOfBirth" Type="date" />
           <Property Name="Mail" Type="varchar" MaxLength="30" />
           <Property Name="Username" Type="varchar" MaxLength="20" />
           <Property Name="HashedPassword" Type="varchar" MaxLength="100" />
@@ -45,7 +47,7 @@
           <Property Name="Engagement" Type="varchar" MaxLength="20" />
           <Property Name="Salary" Type="money" />
         </EntityType>
-        <Association Name="FK__tblAbsenc__FkSta__31EC6D26">
+        <Association Name="FK__tblAbsenc__FkSta__3F466844">
           <End Role="tblStaff" Type="Self.tblStaff" Multiplicity="0..1" />
           <End Role="tblAbsences" Type="Self.tblAbsences" Multiplicity="*" />
           <ReferentialConstraint>
@@ -61,7 +63,7 @@
           <EntitySet Name="tblAbsences" EntityType="Self.tblAbsences" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblManagers" EntityType="Self.tblManagers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblStaff" EntityType="Self.tblStaff" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__tblAbsenc__FkSta__31EC6D26" Association="Self.FK__tblAbsenc__FkSta__31EC6D26">
+          <AssociationSet Name="FK__tblAbsenc__FkSta__3F466844" Association="Self.FK__tblAbsenc__FkSta__3F466844">
             <End Role="tblStaff" EntitySet="tblStaff" />
             <End Role="tblAbsences" EntitySet="tblAbsences" />
           </AssociationSet>
@@ -80,7 +82,7 @@
           <Property Name="LastDay" Type="DateTime" Precision="0" />
           <Property Name="Cause" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="FkStaff" Type="Int32" />
-          <NavigationProperty Name="tblStaff" Relationship="Self.FK__tblAbsenc__FkSta__31EC6D26" FromRole="tblAbsences" ToRole="tblStaff" />
+          <NavigationProperty Name="tblStaff" Relationship="Self.FK__tblAbsenc__FkSta__3F466844" FromRole="tblAbsences" ToRole="tblStaff" />
         </EntityType>
         <EntityType Name="tblManager">
           <Key>
@@ -89,6 +91,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
           <Property Name="Mail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="HashedPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -103,6 +106,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
           <Property Name="Mail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="HashedPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -111,9 +115,9 @@
           <Property Name="Citizenship" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Engagement" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="tblAbsences" Relationship="Self.FK__tblAbsenc__FkSta__31EC6D26" FromRole="tblStaff" ToRole="tblAbsences" />
+          <NavigationProperty Name="tblAbsences" Relationship="Self.FK__tblAbsenc__FkSta__3F466844" FromRole="tblStaff" ToRole="tblAbsences" />
         </EntityType>
-        <Association Name="FK__tblAbsenc__FkSta__31EC6D26">
+        <Association Name="FK__tblAbsenc__FkSta__3F466844">
           <End Role="tblStaff" Type="Self.tblStaff" Multiplicity="0..1" />
           <End Role="tblAbsences" Type="Self.tblAbsence" Multiplicity="*" />
           <ReferentialConstraint>
@@ -125,11 +129,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="HotelDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="HotelEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tblAbsences" EntityType="Self.tblAbsence" />
           <EntitySet Name="tblManagers" EntityType="Self.tblManager" />
           <EntitySet Name="tblStaffs" EntityType="Self.tblStaff" />
-          <AssociationSet Name="FK__tblAbsenc__FkSta__31EC6D26" Association="Self.FK__tblAbsenc__FkSta__31EC6D26">
+          <AssociationSet Name="FK__tblAbsenc__FkSta__3F466844" Association="Self.FK__tblAbsenc__FkSta__3F466844">
             <End Role="tblStaff" EntitySet="tblStaffs" />
             <End Role="tblAbsences" EntitySet="tblAbsences" />
           </AssociationSet>
@@ -139,7 +143,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HotelDBModelStoreContainer" CdmEntityContainer="HotelDBEntities">
+        <EntityContainerMapping StorageEntityContainer="HotelDBModelStoreContainer" CdmEntityContainer="HotelEntities">
           <EntitySetMapping Name="tblAbsences">
             <EntityTypeMapping TypeName="HotelDBModel.tblAbsence">
               <MappingFragment StoreEntitySet="tblAbsences">
@@ -157,6 +161,7 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="HashedPassword" ColumnName="HashedPassword" />
@@ -172,6 +177,7 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="HashedPassword" ColumnName="HashedPassword" />

@@ -42,7 +42,11 @@ namespace Dan_XLIX_Nemanja_Pilipovic
             {
                 OwnerView view = new OwnerView();
                 view.ShowDialog();
-            }            
+            }
+            else
+            {
+                MessageBox.Show("Username or Password Not Valid");
+            }
         }
     }
 }

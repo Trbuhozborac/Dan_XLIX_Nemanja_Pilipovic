@@ -21,3 +21,7 @@ C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\bin\Debug\EntityFr
 C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Dan_XLIX_Nemanja_Pilipovic_Content.g.cs
 C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Dan_XLIX_Nemanja_Pilipovic.csproj.CopyComplete
+C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Views\CreateManagerView.g.cs
+C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Views\CreateStaffView.g.cs
+C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Views\CreateManagerView.baml
+C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Views\CreateStaffView.baml

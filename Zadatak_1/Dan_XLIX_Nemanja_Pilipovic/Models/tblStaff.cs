@@ -23,6 +23,7 @@ namespace Dan_XLIX_Nemanja_Pilipovic.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
         public string Mail { get; set; }
         public string Username { get; set; }
         public string HashedPassword { get; set; }

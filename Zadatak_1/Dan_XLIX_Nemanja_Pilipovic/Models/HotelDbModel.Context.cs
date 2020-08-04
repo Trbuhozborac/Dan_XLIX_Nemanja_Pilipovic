@@ -13,10 +13,10 @@ namespace Dan_XLIX_Nemanja_Pilipovic.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HotelDBEntities : DbContext
+    public partial class HotelEntities : DbContext
     {
-        public HotelDBEntities()
-            : base("name=HotelDBEntities")
+        public HotelEntities()
+            : base("name=HotelEntities")
         {
         }
     
