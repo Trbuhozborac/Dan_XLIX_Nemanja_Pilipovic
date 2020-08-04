@@ -98,7 +98,7 @@ namespace Dan_XLIX_Nemanja_Pilipovic.ViewModels
                 string.IsNullOrWhiteSpace(Manager.Mail) || string.IsNullOrWhiteSpace(Manager.Username) ||
                 string.IsNullOrWhiteSpace(Manager.HashedPassword) || string.IsNullOrWhiteSpace(Manager.HotelLevel.ToString()) 
                 || string.IsNullOrWhiteSpace(Manager.YearsOfExperience.ToString()) 
-                || string.IsNullOrWhiteSpace(Manager.QualificationLevel.ToString()))
+                || string.IsNullOrWhiteSpace(Manager.QualificationLevel.ToString()) || Manager.DateOfBirth >= new DateTime(2002, 01, 01))
             {
                 return false;
             }

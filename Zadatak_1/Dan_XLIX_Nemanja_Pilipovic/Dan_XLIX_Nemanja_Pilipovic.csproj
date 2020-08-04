@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CreateManagerViewModel.cs" />
+    <Compile Include="ViewModels\CreateStaffViewModel.cs" />
     <Compile Include="ViewModels\OwnerViewModel.cs" />
     <Compile Include="Views\CreateManagerView.xaml.cs">
       <DependentUpon>CreateManagerView.xaml</DependentUpon>
