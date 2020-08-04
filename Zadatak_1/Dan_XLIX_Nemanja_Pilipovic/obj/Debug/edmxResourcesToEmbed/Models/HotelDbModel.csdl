@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HotelDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblAbsence">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstDay" Type="DateTime" Precision="0" />
+    <Property Name="LastDay" Type="DateTime" Precision="0" />
+    <Property Name="Cause" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FkStaff" Type="Int32" />
+    <NavigationProperty Name="tblStaff" Relationship="Self.FK__tblAbsenc__FkSta__3F466844" FromRole="tblAbsences" ToRole="tblStaff" />
+  </EntityType>
+  <EntityType Name="tblManager">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Mail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="HashedPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HotelLevel" Type="Int32" />
+    <Property Name="YearsOfExperience" Type="Int32" />
+    <Property Name="QualificationLevel" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblStaff">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Mail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="HashedPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HotelLevel" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Citizenship" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Engagement" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="tblAbsences" Relationship="Self.FK__tblAbsenc__FkSta__3F466844" FromRole="tblStaff" ToRole="tblAbsences" />
+  </EntityType>
+  <Association Name="FK__tblAbsenc__FkSta__3F466844">
+    <End Role="tblStaff" Type="Self.tblStaff" Multiplicity="0..1" />
+    <End Role="tblAbsences" Type="Self.tblAbsence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStaff">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblAbsences">
+        <PropertyRef Name="FkStaff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HotelEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblAbsences" EntityType="Self.tblAbsence" />
+    <EntitySet Name="tblManagers" EntityType="Self.tblManager" />
+    <EntitySet Name="tblStaffs" EntityType="Self.tblStaff" />
+    <AssociationSet Name="FK__tblAbsenc__FkSta__3F466844" Association="Self.FK__tblAbsenc__FkSta__3F466844">
+      <End Role="tblStaff" EntitySet="tblStaffs" />
+      <End Role="tblAbsences" EntitySet="tblAbsences" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dan_XLIX_Nemanja_Pilipovic"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="250" Width="250">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="1" Content="Username"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Name="txtUsername" FontSize="18"/>
+        <Label Grid.Column="1" Grid.Row="3" Content="Password"/>
+        <PasswordBox Grid.Column="1" Grid.Row="4" Name="txtPassword" FontSize="18"/>
+        <Button 
+            Grid.Column="1" Grid.Row="5"
+            Name="btnSubmit" Click="btnSubmit_Click" 
+            Content="Submit" Margin="60 10" FontSize="18"/>
     </Grid>
 </Window>
