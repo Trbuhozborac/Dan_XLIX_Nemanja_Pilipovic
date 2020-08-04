@@ -13,3 +13,5 @@ C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Dan_XLIX
 C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Dan_XLIX_Nemanja_Pilipovic.csproj.CoreCompileInputs.cache
 C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Dan_XLIX_Nemanja_Pilipovic.exe
 C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Dan_XLIX_Nemanja_Pilipovic.pdb
+C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Views\OwnerView.g.cs
+C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Views\OwnerView.baml
