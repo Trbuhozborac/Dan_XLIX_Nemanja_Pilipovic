@@ -12,7 +12,7 @@ namespace Dan_XLIX_Nemanja_Pilipovic.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblManager
+    public partial class tblManager : IUser
     {
         public int Id { get; set; }
         public string Name { get; set; }

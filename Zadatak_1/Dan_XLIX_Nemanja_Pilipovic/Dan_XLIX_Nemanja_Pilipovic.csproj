@@ -80,6 +80,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HotelDbModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\IUser.cs" />
     <Compile Include="Models\tblAbsence.cs">
       <DependentUpon>HotelDbModel.tt</DependentUpon>
     </Compile>
@@ -99,8 +100,14 @@
     <Compile Include="Views\CreateStaffView.xaml.cs">
       <DependentUpon>CreateStaffView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ManagerView.xaml.cs">
+      <DependentUpon>ManagerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\OwnerView.xaml.cs">
       <DependentUpon>OwnerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StaffView.xaml.cs">
+      <DependentUpon>StaffView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -122,7 +129,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ManagerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\OwnerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StaffView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\App.xaml
-4-1331746873
+6-1634709796
 2-1437897895
-191361082962
+221611737912
 18-1399158912
-MainWindow.xaml;Views\CreateManagerView.xaml;Views\CreateStaffView.xaml;Views\OwnerView.xaml;
+MainWindow.xaml;Views\CreateManagerView.xaml;Views\CreateStaffView.xaml;Views\ManagerView.xaml;Views\OwnerView.xaml;Views\StaffView.xaml;
 
 False
 

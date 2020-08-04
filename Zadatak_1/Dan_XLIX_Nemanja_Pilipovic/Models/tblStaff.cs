@@ -12,7 +12,7 @@ namespace Dan_XLIX_Nemanja_Pilipovic.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblStaff
+    public partial class tblStaff : IUser
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblStaff()

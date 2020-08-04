@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dan_XLIX_Nemanja_Pilipovic.Views"
         mc:Ignorable="d"
-        Title="OwnerView" Height="250" Width="270">
+        Title="Hotel Owner" Height="250" Width="270">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>

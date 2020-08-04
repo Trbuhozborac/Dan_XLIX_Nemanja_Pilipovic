@@ -3,6 +3,7 @@ using Dan_XLIX_Nemanja_Pilipovic.Models;
 using Dan_XLIX_Nemanja_Pilipovic.Views;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
@@ -23,6 +24,7 @@ namespace Dan_XLIX_Nemanja_Pilipovic.ViewModels
             main = mainOpen;
             Staff = new tblStaff();
             AllEnqaqements = GetAllEnqaqements();
+            AvailableLevels = GetAllAvalaibleLevels();
         }
 
         #endregion
@@ -40,6 +42,32 @@ namespace Dan_XLIX_Nemanja_Pilipovic.ViewModels
                 OnPropertyChanged("Staff");
             }
         }
+
+        private List<int> availableLevels;
+
+        public List<int> AvailableLevels
+        {
+            get { return availableLevels; }
+            set 
+            {
+                availableLevels = value;
+                OnPropertyChanged("AvailableLevels");
+            }
+        }
+
+        private int level;
+
+        public int Level
+        {
+            get { return level; }
+            set 
+            {
+                level = value;
+                OnPropertyChanged("Level");
+            }
+        }
+
+
 
         private string enqaqement;
 
@@ -115,6 +143,7 @@ namespace Dan_XLIX_Nemanja_Pilipovic.ViewModels
             try
             {
                 Staff.Engagement = Enqaqement;
+                Staff.HotelLevel = Level;
                 using(HotelEntities db = new HotelEntities())
                 {
                     db.tblStaffs.Add(Staff);
@@ -133,7 +162,7 @@ namespace Dan_XLIX_Nemanja_Pilipovic.ViewModels
         {
             if (string.IsNullOrWhiteSpace(Staff.Name) || string.IsNullOrWhiteSpace(Staff.Surname) ||
                 string.IsNullOrWhiteSpace(Staff.Mail) || string.IsNullOrWhiteSpace(Staff.Username) ||
-                string.IsNullOrWhiteSpace(Staff.HashedPassword) || string.IsNullOrWhiteSpace(Staff.HotelLevel.ToString())
+                string.IsNullOrWhiteSpace(Staff.HashedPassword) || Level == 0
                 || string.IsNullOrWhiteSpace(Staff.Gender) || string.IsNullOrWhiteSpace(Staff.Citizenship)
                 || string.IsNullOrWhiteSpace(enqaqement) || Staff.DateOfBirth >= new DateTime(2002,01,01))
             {
@@ -153,6 +182,29 @@ namespace Dan_XLIX_Nemanja_Pilipovic.ViewModels
         private bool CanCloseExecute()
         {
             return true;
+        }
+
+        private List<int> GetAllAvalaibleLevels()
+        {
+            try
+            {
+                List<int> availableLevels = new List<int>();
+                using(HotelEntities db = new HotelEntities())
+                {
+                    foreach (tblManager manager in db.tblManagers)
+                    {
+                        availableLevels.Add(Convert.ToInt32(manager.HotelLevel));
+                    }
+                }
+                List<int> levelsWithNoDuplicates = availableLevels.Distinct().ToList();
+
+                return levelsWithNoDuplicates;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                return null;
+            }
         }
 
         #endregion
