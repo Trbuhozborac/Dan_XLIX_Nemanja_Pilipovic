@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HotelDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblAbsences">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstDay" Type="date" />
+    <Property Name="LastDay" Type="date" />
+    <Property Name="Cause" Type="varchar" MaxLength="50" />
+    <Property Name="FkStaff" Type="int" />
+  </EntityType>
+  <EntityType Name="tblManagers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" />
+    <Property Name="Mail" Type="varchar" MaxLength="30" />
+    <Property Name="Username" Type="varchar" MaxLength="20" />
+    <Property Name="HashedPassword" Type="varchar" MaxLength="100" />
+    <Property Name="HotelLevel" Type="int" />
+    <Property Name="YearsOfExperience" Type="int" />
+    <Property Name="QualificationLevel" Type="int" />
+  </EntityType>
+  <EntityType Name="tblStaff">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" />
+    <Property Name="Mail" Type="varchar" MaxLength="30" />
+    <Property Name="Username" Type="varchar" MaxLength="20" />
+    <Property Name="HashedPassword" Type="varchar" MaxLength="100" />
+    <Property Name="HotelLevel" Type="int" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+    <Property Name="Citizenship" Type="varchar" MaxLength="20" />
+    <Property Name="Engagement" Type="varchar" MaxLength="20" />
+    <Property Name="Salary" Type="money" />
+  </EntityType>
+  <Association Name="FK__tblAbsenc__FkSta__31EC6D26">
+    <End Role="tblStaff" Type="Self.tblStaff" Multiplicity="0..1" />
+    <End Role="tblAbsences" Type="Self.tblAbsences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStaff">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblAbsences">
+        <PropertyRef Name="FkStaff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HotelDBModelStoreContainer">
+    <EntitySet Name="tblAbsences" EntityType="Self.tblAbsences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblManagers" EntityType="Self.tblManagers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblStaff" EntityType="Self.tblStaff" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tblAbsenc__FkSta__31EC6D26" Association="Self.FK__tblAbsenc__FkSta__31EC6D26">
+      <End Role="tblStaff" EntitySet="tblStaff" />
+      <End Role="tblAbsences" EntitySet="tblAbsences" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -15,3 +15,9 @@ C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Dan_XLIX
 C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Dan_XLIX_Nemanja_Pilipovic.pdb
 C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Views\OwnerView.g.cs
 C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Views\OwnerView.baml
+C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\bin\Debug\EntityFramework.dll
+C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\bin\Debug\EntityFramework.xml
+C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Dan_XLIX_Nemanja_Pilipovic_Content.g.cs
+C:\Users\Pipi\Desktop\49\Zadatak_1\Dan_XLIX_Nemanja_Pilipovic\obj\Debug\Dan_XLIX_Nemanja_Pilipovic.csproj.CopyComplete

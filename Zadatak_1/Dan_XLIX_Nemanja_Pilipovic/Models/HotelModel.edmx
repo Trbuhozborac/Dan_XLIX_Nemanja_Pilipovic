@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HotelDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblAbsences">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstDay" Type="date" />
+          <Property Name="LastDay" Type="date" />
+          <Property Name="Cause" Type="varchar" MaxLength="50" />
+          <Property Name="FkStaff" Type="int" />
+        </EntityType>
+        <EntityType Name="tblManagers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="Surname" Type="varchar" MaxLength="50" />
+          <Property Name="Mail" Type="varchar" MaxLength="30" />
+          <Property Name="Username" Type="varchar" MaxLength="20" />
+          <Property Name="HashedPassword" Type="varchar" MaxLength="100" />
+          <Property Name="HotelLevel" Type="int" />
+          <Property Name="YearsOfExperience" Type="int" />
+          <Property Name="QualificationLevel" Type="int" />
+        </EntityType>
+        <EntityType Name="tblStaff">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="Surname" Type="varchar" MaxLength="50" />
+          <Property Name="Mail" Type="varchar" MaxLength="30" />
+          <Property Name="Username" Type="varchar" MaxLength="20" />
+          <Property Name="HashedPassword" Type="varchar" MaxLength="100" />
+          <Property Name="HotelLevel" Type="int" />
+          <Property Name="Gender" Type="char" MaxLength="1" />
+          <Property Name="Citizenship" Type="varchar" MaxLength="20" />
+          <Property Name="Engagement" Type="varchar" MaxLength="20" />
+          <Property Name="Salary" Type="money" />
+        </EntityType>
+        <Association Name="FK__tblAbsenc__FkSta__31EC6D26">
+          <End Role="tblStaff" Type="Self.tblStaff" Multiplicity="0..1" />
+          <End Role="tblAbsences" Type="Self.tblAbsences" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblStaff">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAbsences">
+              <PropertyRef Name="FkStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HotelDBModelStoreContainer">
+          <EntitySet Name="tblAbsences" EntityType="Self.tblAbsences" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblManagers" EntityType="Self.tblManagers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblStaff" EntityType="Self.tblStaff" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tblAbsenc__FkSta__31EC6D26" Association="Self.FK__tblAbsenc__FkSta__31EC6D26">
+            <End Role="tblStaff" EntitySet="tblStaff" />
+            <End Role="tblAbsences" EntitySet="tblAbsences" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HotelDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblAbsence">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstDay" Type="DateTime" Precision="0" />
+          <Property Name="LastDay" Type="DateTime" Precision="0" />
+          <Property Name="Cause" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FkStaff" Type="Int32" />
+          <NavigationProperty Name="tblStaff" Relationship="Self.FK__tblAbsenc__FkSta__31EC6D26" FromRole="tblAbsences" ToRole="tblStaff" />
+        </EntityType>
+        <EntityType Name="tblManager">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="HashedPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HotelLevel" Type="Int32" />
+          <Property Name="YearsOfExperience" Type="Int32" />
+          <Property Name="QualificationLevel" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblStaff">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="HashedPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HotelLevel" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Citizenship" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Engagement" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="tblAbsences" Relationship="Self.FK__tblAbsenc__FkSta__31EC6D26" FromRole="tblStaff" ToRole="tblAbsences" />
+        </EntityType>
+        <Association Name="FK__tblAbsenc__FkSta__31EC6D26">
+          <End Role="tblStaff" Type="Self.tblStaff" Multiplicity="0..1" />
+          <End Role="tblAbsences" Type="Self.tblAbsence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblStaff">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAbsences">
+              <PropertyRef Name="FkStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HotelDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblAbsences" EntityType="Self.tblAbsence" />
+          <EntitySet Name="tblManagers" EntityType="Self.tblManager" />
+          <EntitySet Name="tblStaffs" EntityType="Self.tblStaff" />
+          <AssociationSet Name="FK__tblAbsenc__FkSta__31EC6D26" Association="Self.FK__tblAbsenc__FkSta__31EC6D26">
+            <End Role="tblStaff" EntitySet="tblStaffs" />
+            <End Role="tblAbsences" EntitySet="tblAbsences" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HotelDBModelStoreContainer" CdmEntityContainer="HotelDBEntities">
+          <EntitySetMapping Name="tblAbsences">
+            <EntityTypeMapping TypeName="HotelDBModel.tblAbsence">
+              <MappingFragment StoreEntitySet="tblAbsences">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstDay" ColumnName="FirstDay" />
+                <ScalarProperty Name="LastDay" ColumnName="LastDay" />
+                <ScalarProperty Name="Cause" ColumnName="Cause" />
+                <ScalarProperty Name="FkStaff" ColumnName="FkStaff" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblManagers">
+            <EntityTypeMapping TypeName="HotelDBModel.tblManager">
+              <MappingFragment StoreEntitySet="tblManagers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="HashedPassword" ColumnName="HashedPassword" />
+                <ScalarProperty Name="HotelLevel" ColumnName="HotelLevel" />
+                <ScalarProperty Name="YearsOfExperience" ColumnName="YearsOfExperience" />
+                <ScalarProperty Name="QualificationLevel" ColumnName="QualificationLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblStaffs">
+            <EntityTypeMapping TypeName="HotelDBModel.tblStaff">
+              <MappingFragment StoreEntitySet="tblStaff">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="HashedPassword" ColumnName="HashedPassword" />
+                <ScalarProperty Name="HotelLevel" ColumnName="HotelLevel" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Citizenship" ColumnName="Citizenship" />
+                <ScalarProperty Name="Engagement" ColumnName="Engagement" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
